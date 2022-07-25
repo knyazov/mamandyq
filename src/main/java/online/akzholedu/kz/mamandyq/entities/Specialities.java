@@ -23,8 +23,11 @@ public class Specialities {
     @Column(columnDefinition = "text")
     private String description;
 
-    private int salary;
+    private String salary;
 
     @ManyToMany(fetch = FetchType.LAZY)
-    List<Universities> universities;
+    private List<Universities> universities;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    private PairSubjects subjects;
 }
