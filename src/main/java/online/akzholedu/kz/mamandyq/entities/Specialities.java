@@ -4,6 +4,7 @@ package online.akzholedu.kz.mamandyq.entities;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Getter
@@ -17,5 +18,13 @@ public class Specialities {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    private String name;
 
+    @Column(columnDefinition = "text")
+    private String description;
+
+    private int salary;
+
+    @ManyToMany(fetch = FetchType.LAZY)
+    List<Universities> universities;
 }

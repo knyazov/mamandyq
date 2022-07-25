@@ -6,24 +6,17 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
+@Table(name = "t_universities")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "t_quizResult")
-public class QuizResult {
+public class Universities {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String code;
-
-    private String description;
-
-    private String title;
-
-    @ManyToMany(fetch = FetchType.LAZY)
-    private List<Specialities> specialities;
+    private String name;
 }
